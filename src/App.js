@@ -1,5 +1,5 @@
 function App() {
-  return <div> Paga il caffe</div>;
+  return <div>Tanto ho vinto io!!</div>;
 }
 
 export default App;
