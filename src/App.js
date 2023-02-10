@@ -1,5 +1,6 @@
 import { connection } from "./Api";
 import { useState, useEffect } from "react";
+import CardList from "./components/CardList";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -13,11 +14,14 @@ const App = () => {
 
   useEffect(() => {
     update();
-  },[]);
+  }, []);
 
   return (
     <div>
-      <h1>Marco Pagaaaa</h1>
+      <div className=" container">
+        <h1>Marco Pagaaa</h1>
+        <CardList data={data} />
+      </div>
     </div>
   );
 };

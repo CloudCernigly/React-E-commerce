@@ -74,3 +74,5 @@ npm i font-awesome
 
 BootStrap
 npm i bootstrap
+BootStrap-react install
+npm install react-bootstrap bootstrap
