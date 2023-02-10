@@ -1,3 +1,13 @@
+import NavBar from "./components/NavBar";
+import { Navboo } from "./components/Navboo";
+
+function App() {
+  return (
+    <div>
+      <Navboo />
+    </div>
+  );
+}
 import { connection } from "./Api";
 import { useState, useEffect } from "react";
 import CardList from "./components/CardList";
