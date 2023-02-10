@@ -1,23 +1,13 @@
-import NavBar from "./components/NavBar";
-import { Navboo } from "./components/Navboo";
-
-function App() {
-  return (
-    <div>
-      <Navboo />
-    </div>
-  );
-}
 import { connection } from "./Api";
 import { useState, useEffect } from "react";
 import CardList from "./components/CardList";
+import { Navboo } from "./components/Navboo";
 
 const App = () => {
   const [data, setData] = useState([]);
 
   const update = async () => {
     const response = await connection();
-
     setData(response);
     console.log(response);
   };
@@ -29,7 +19,8 @@ const App = () => {
   return (
     <div>
       <div className=" container">
-        <h1>Marco Pagaaa</h1>
+        <Navboo />
+        <h1>Marco</h1>
         <CardList data={data} />
       </div>
     </div>
