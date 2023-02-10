@@ -1,4 +1,4 @@
-import { connection } from "./api";
+import { connection } from "./Api";
 import { useState, useEffect } from "react";
 
 const App = () => {
