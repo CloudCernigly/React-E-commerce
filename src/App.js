@@ -1,14 +1,5 @@
-import NavBar from "./components/NavBar";
-import { Navboo } from "./components/Navboo";
-
-function App() {
-  return (
-    <div>
-      <Navboo />
-    </div>
-  );
-}
-import { connection } from "./Api";
+import { NavBar } from "./components/NavBar";
+import { connection } from "./api";
 import { useState, useEffect } from "react";
 import CardList from "./components/CardList";
 
@@ -28,8 +19,8 @@ const App = () => {
 
   return (
     <div>
-      <div className=" container">
-        <h1>Marco Pagaaa</h1>
+      <NavBar />
+      <div className="container d-flex">
         <CardList data={data} />
       </div>
     </div>

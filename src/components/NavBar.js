@@ -1,20 +1,18 @@
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
+import NavBarcss from "./NavBarcss.css";
 
-const NavBar = () => {
+export const NavBar = () => {
   return (
-    <>
-      <Container>
-        <Navbar expand="lg" variant="light" bg="light">
-          <Container>
-            <Navbar.Brand href="#">Navbar</Navbar.Brand>
-            <Button variant="outline-success">Search</Button>
-          </Container>
-        </Navbar>
-      </Container>
-    </>
+    <div className="container">
+      <nav className="navbar navbar-expand-lg ">
+        <button className="btn ms-3" type="submit">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <span className="badge text-white rounded-pill border border-dark">
+            4
+          </span>
+        </button>
+      </nav>
+    </div>
   );
 };
-
-export default NavBar;
