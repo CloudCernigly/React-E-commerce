@@ -77,6 +77,5 @@ npm install --save @fortawesome/react-fontawesome
 
 BootStrap
 npm i bootstrap
-
-react-bootstrap
+BootStrap-react install
 npm install react-bootstrap bootstrap
