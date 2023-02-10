@@ -14,7 +14,7 @@ const Card = ({ item }) => {
         <p>{item.description}</p>
       </div>
       <div className="card-footer">
-        <span className="h6">Price:€{item.price} </span>
+         <span className="h6">Price:€{item.price} </span>
         {/* <span className="h6">{item.minLifeSpan}</span>
         <span className="h6">{item.maxLifeSpan}</span>
         <span className="h6">{item.size}</span> */}
