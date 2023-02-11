@@ -10,7 +10,10 @@ const CardList = ({ data = [] }) => {
       <div className="row gy-3">
         {data.map((element) => {
           return (
-            <div key={element.id} className="col-12 col-sm-6 col-lg-4">
+            <div
+              key={element.id}
+              className="col-12 col-sm-6 col-lg-4 d-flex justify-content-center "
+            >
               <Card item={element} />
             </div>
           );
@@ -23,7 +26,10 @@ const CardList = ({ data = [] }) => {
       <div className="row gy-3">
         {data.map((element) => {
           return (
-            <div key={element.id} className="col-12 col-sm-6 col-lg-4">
+            <div
+              key={element.id}
+              className="col-12 col-sm-6 col-lg-4 d-flex justify-content-center"
+            >
               <Card item={element} />
             </div>
           );
