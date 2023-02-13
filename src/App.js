@@ -1,28 +1,31 @@
-import { connection } from "./Api";
 import { useState, useEffect } from "react";
-import CardList from "./components/CardList";
-import { Navboo } from "./components/Navboo";
+import { getData } from "./Api";
+import ProductList from "./components/ProductList";
+import Cart from "./components/Cart";
 
 const App = () => {
   const [data, setData] = useState([]);
 
-  const update = async () => {
-    const response = await connection();
-    setData(response);
-    console.log(response);
+  const [cartProducts, setCartProducts] = useState([]);
+
+  const handleProductClick = (product) => {
+    const newCart = [...cartProducts, product];
+
+    setCartProducts(newCart);
   };
 
   useEffect(() => {
-    update();
+    const loadData = async () => {
+      const result = await getData();
+      setData(result);
+    };
+    loadData();
   }, []);
 
   return (
-    <div>
-      <div className=" container">
-        <Navboo />
-        <h1>Marco</h1>
-        <CardList data={data} />
-      </div>
+    <div className="container">
+      <Cart cart={cartProducts} />
+      <ProductList products={data} incrementCart={handleProductClick} />
     </div>
   );
 };
