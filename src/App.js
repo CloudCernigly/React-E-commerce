@@ -19,7 +19,7 @@ const App = () => {
   return (
     <div>
       <NavBar />
-      <div className="container d-flex">
+      <div className="container">
         <CardList data={data} />
       </div>
     </div>
