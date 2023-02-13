@@ -16,7 +16,7 @@ const Cart = ({ cart }) => {
         <ul>
           {cart.map((el) => {
             return (
-              <li>
+              <li key={el.id}>
                 {el.title} {el.price}
               </li>
             );

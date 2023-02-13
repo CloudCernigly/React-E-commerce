@@ -1,3 +1,6 @@
+
+import "./style.css";
+
 const Product = ({ product, incrementCart }) => {
   //console.log(product, incrementCart);
   const handleClick = () => {
@@ -6,7 +9,7 @@ const Product = ({ product, incrementCart }) => {
   };
 
   return (
-    <div className="card h-100">
+    <div className="card h-100 desc">
       <div className="card-header text-center" style={{ height: "200px" }}>
         <img src={product.image} alt="product" style={{ height: "100%" }} />
       </div>

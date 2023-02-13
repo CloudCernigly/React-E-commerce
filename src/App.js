@@ -5,15 +5,13 @@ import Cart from "./components/Cart";
 
 const App = () => {
   const [data, setData] = useState([]);
-
   const [cartProducts, setCartProducts] = useState([]);
+  
 
   const handleProductClick = (product) => {
     const newCart = [...cartProducts, product];
-
     setCartProducts(newCart);
   };
-
   useEffect(() => {
     const loadData = async () => {
       const result = await getData();
