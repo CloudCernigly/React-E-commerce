@@ -21,9 +21,17 @@ const App = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
+    <div>
+      <NavBar />
+      <div className="container">
+        <CardList data={data} />
+      </div>
+=======
     <div className="container">
       <Cart cart={cartProducts} />
       <ProductList products={data} incrementCart={handleProductClick} />
+>>>>>>> 86d4e28ecbf68ef194b9acc346b33feabc873572
     </div>
   );
 };
