@@ -1,5 +1,10 @@
 import { useState } from "react";
 import { BsFillCartFill } from "react-icons/bs";
+
+
+
+
+
 const Cart = ({ cart }) => {
   console.log(cart);
 
@@ -8,6 +13,9 @@ const Cart = ({ cart }) => {
   const toggleShowList = () => {
     setShowList(!showList);
   };
+  const deleteProduct=()=>{
+
+  }
 
   let content = <></>;
   if (showList) {
@@ -20,7 +28,7 @@ const Cart = ({ cart }) => {
                 {el.title} {el.price}
               </li>
             );
-          })}
+              })}
         </ul>
       </div>
     );
