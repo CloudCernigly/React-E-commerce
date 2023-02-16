@@ -6,12 +6,31 @@ import Cart from "./components/Cart";
 const App = () => {
   const [data, setData] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
-  
+
+  const itemIsPresent = (item) => {
+    return (
+      cartProducts.findIndex((el) => {
+        return el.id === item.id;
+      }) > -1
+    );
+  };
 
   const handleProductClick = (product) => {
-    const newCart = [...cartProducts, product];
-    setCartProducts(newCart);
+    if (!itemIsPresent(product)) {
+      const newCart = [...cartProducts, { ...product }];
+      setCartProducts(newCart);
+    } else {
+      window.alert("Product is alerady  insert to cart");
+    }
   };
+
+  const removeItem = (product) => {
+    const updatedItems = [...cartProducts];
+    const index = updatedItems.indexOf(product);
+    updatedItems.splice(index, 1);
+    setCartProducts(updatedItems);
+  };
+
   useEffect(() => {
     const loadData = async () => {
       const result = await getData();
@@ -21,17 +40,13 @@ const App = () => {
   }, []);
 
   return (
-<<<<<<< HEAD
-    <div>
-      <NavBar />
-      <div className="container">
-        <CardList data={data} />
-      </div>
-=======
     <div className="container">
-      <Cart cart={cartProducts} />
-      <ProductList products={data} incrementCart={handleProductClick} />
->>>>>>> 86d4e28ecbf68ef194b9acc346b33feabc873572
+      <Cart cart={cartProducts} removeItem={removeItem} />
+      <ProductList
+        products={data}
+        incrementCart={handleProductClick}
+        itemIsPresent={itemIsPresent}
+      />
     </div>
   );
 };

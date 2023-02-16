@@ -1,7 +1,6 @@
-
 import "./style.css";
 
-const Product = ({ product, incrementCart }) => {
+const Product = ({ product, incrementCart, isAdded }) => {
   //console.log(product, incrementCart);
   const handleClick = () => {
     console.log("clicked product " + product.id);
@@ -18,7 +17,11 @@ const Product = ({ product, incrementCart }) => {
         <div>{product.price} &euro;</div>
       </div>
       <div className="card-footer text-center">
-        <button className="btn btn-info" onClick={handleClick}>
+        <button
+          className="btn btn-info"
+          onClick={handleClick}
+          //disabled={isAdded}
+        >
           Add to cart
         </button>
       </div>

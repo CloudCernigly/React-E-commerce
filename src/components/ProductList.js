@@ -1,11 +1,16 @@
 import Product from "./Product";
 
-const ProductList = ({ products, incrementCart }) => {
+const ProductList = ({ products, incrementCart, itemIsPresent }) => {
   //console.log(products, incrementCart);
   const content = products.map((el) => {
+    console.log(el==itemIsPresent)
     return (
       <div key={el.id} className="col-12 col-sm-6 col-lg-4">
-        <Product product={el} incrementCart={incrementCart} />
+        <Product
+          product={el}
+          incrementCart={incrementCart}
+          isAdded={itemIsPresent}
+        />
       </div>
     );
   });
